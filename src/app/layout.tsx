@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
@@ -29,7 +30,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<Header />
+				<Suspense fallback={null}>
+					<Header />
+				</Suspense>
 				{children}
 				<Toaster richColors position="top-right" />
 
