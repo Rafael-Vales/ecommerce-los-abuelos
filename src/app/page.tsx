@@ -101,7 +101,7 @@ export default function HomePage() {
 				<div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 					<CategoryCard
 						title="ALIMENTOS SECOS"
-						image="/img/img1.png"
+						image="/img/Img1.png"
 						count={84}
 						isActive={selectedCategory === "secos"}
 						onClick={() =>
@@ -112,7 +112,7 @@ export default function HomePage() {
 					/>
 					<CategoryCard
 						title="ALIMENTOS HUMEDOS"
-						image="/img/img2.png"
+						image="/img/Img2.png"
 						count={16}
 						isActive={selectedCategory === "humedos"}
 						onClick={() =>
@@ -123,7 +123,7 @@ export default function HomePage() {
 					/>
 					<CategoryCard
 						title="ALIMENTOS ESPECIALES"
-						image="/img/img3.png"
+						image="/img/Img3.png"
 						count={42}
 						isActive={selectedCategory === "especiales"}
 						onClick={() =>

@@ -9,13 +9,13 @@ export const mockPets: Pet[] = [
   {
     id: "1",
     name: "Rocky",
-    image: "/img/dalmata.png",
+    image: "/img/Dalmata.png",
     food: "Advance Perro Adulto",
   },
   {
     id: "2",
     name: "Mishi",
-    image: "/img/gatoc.png",
+    image: "/img/GatoC.png",
     food: "Gati Adulto",
   },
 ];

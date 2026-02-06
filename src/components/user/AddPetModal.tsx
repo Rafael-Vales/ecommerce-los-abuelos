@@ -43,7 +43,7 @@ export default function AddPetModal({ onClose, onSave }: AddPetModalProps) {
 						<input
 							type="text"
 							className="w-full border rounded-lg px-3 py-2"
-							placeholder="/img/perrito.png"
+							placeholder="/img/Dalmata.png"
 							value={image}
 							onChange={(e) => setImage(e.target.value)}
 							required

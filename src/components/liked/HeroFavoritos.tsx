@@ -30,7 +30,7 @@ export default function HeroPerro() {
 					transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
 					className="flex justify-center md:justify-end">
 					<Image
-						src="/img/Gatob.png"
+						src="/img/GatoB.png"
 						alt="Perro feliz"
 						width={480}
 						height={480}

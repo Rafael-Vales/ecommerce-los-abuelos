@@ -121,7 +121,7 @@ export default function LoginPage() {
 						className="w-full border border-gray-300 rounded-lg py-2 flex items-center justify-center gap-2 hover:bg-gray-50"
 						onClick={handleGoogle}>
 						<Image
-							src="/img/google-logo.png"
+							src="/img/google-logo.svg"
 							alt="Google"
 							width={18}
 							height={18}
