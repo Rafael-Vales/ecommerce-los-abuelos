@@ -25,26 +25,29 @@ export async function POST(req: Request) {
       );
     }
 
+    const baseUrl =
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "") ||
+      "http://localhost:3000";
+
     const preferenceBody = {
-  items: body.items.map((item: any) => ({
-    title: String(item.title),
-    unit_price: Number(item.price),
-    quantity: Number(item.quantity),
-    currency_id: "ARS",
-  })),
+      items: body.items.map((item: any) => ({
+        title: String(item.title),
+        unit_price: Number(item.price),
+        quantity: Number(item.quantity),
+        currency_id: "ARS",
+      })),
 
-  payer: {
-    email: String(body?.payer?.email ?? "test_user@test.com"),
-  },
+      payer: {
+        email: String(body?.payer?.email ?? "test_user@test.com"),
+      },
 
-  back_urls: {
-    success: "http://localhost:3000/pago/success",
-    failure: "http://localhost:3000/pago/failure",
-    pending: "http://localhost:3000/pago/pending",
-  },
-
-  
-};
+      back_urls: {
+        success: `${baseUrl}/pago/success`,
+        failure: `${baseUrl}/pago/failure`,
+        pending: `${baseUrl}/pago/pending`,
+      },
+    };
 
     const result = await preferenceClient.create({ body: preferenceBody });
 
