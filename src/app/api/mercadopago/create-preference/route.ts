@@ -1,17 +1,20 @@
 import { NextResponse } from "next/server";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 
-const accessToken =
-  process.env.MERCADOPAGO_ACCESS_TOKEN || process.env.MP_ACCESS_TOKEN;
-
-if (!accessToken) {
-  throw new Error("Falta MERCADOPAGO_ACCESS_TOKEN en .env.local");
-}
-
-const mpClient = new MercadoPagoConfig({ accessToken });
-const preferenceClient = new Preference(mpClient);
-
 export async function POST(req: Request) {
+  const accessToken =
+    process.env.MERCADOPAGO_ACCESS_TOKEN || process.env.MP_ACCESS_TOKEN;
+
+  if (!accessToken) {
+    return NextResponse.json(
+      { error: "Falta MERCADOPAGO_ACCESS_TOKEN" },
+      { status: 500 }
+    );
+  }
+
+  const mpClient = new MercadoPagoConfig({ accessToken });
+  const preferenceClient = new Preference(mpClient);
+
   try {
     const body = await req.json();
 
