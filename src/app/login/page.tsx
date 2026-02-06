@@ -21,7 +21,7 @@ export default function LoginPage() {
 			email: "usuario.google@example.com",
 			telefono: "",
 			dni: "",
-			points: 5000,
+			points: 2000,
 		});
 		router.push("/user");
 	};
@@ -49,7 +49,7 @@ export default function LoginPage() {
 			email,
 			telefono: "",
 			dni: "",
-			points: 5000,
+			points: 2000,
 		});
 
 		router.push("/user");

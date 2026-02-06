@@ -8,8 +8,8 @@ export default function Points() {
 	const pathname = usePathname();
 	const { user } = useAuth();
 
-	// Por ahora fallback fijo de 5000 si no hay usuario cargado
-	const puntos = user?.points ?? 5000;
+	// Por ahora fallback fijo de 2000 si no hay usuario cargado
+	const puntos = user?.points ?? 2000;
 
 	const isActive = pathname.startsWith("/puntos");
 
@@ -28,6 +28,9 @@ export default function Points() {
 				/>
 				<span className="text-white text-[16px] md:text-[22px] font-semibold tracking-wide leading-none">
 					{puntos.toLocaleString("es-AR")}
+				</span>
+				<span className="ml-2 text-white/90 text-[12px] md:text-[16px] font-medium leading-none">
+					patitas
 				</span>
 			</div>
 		</Link>

@@ -24,7 +24,7 @@ export default function RegisterPage() {
 			email: "usuario.google@example.com",
 			telefono: phone,
 			dni: "",
-			points: 5000,
+			points: 2000,
 		});
 		router.push("/user");
 	};
@@ -55,7 +55,7 @@ export default function RegisterPage() {
 			email,
 			telefono: phone,
 			dni: "",
-			points: 5000,
+			points: 2000,
 		});
 
 		router.push("/user");

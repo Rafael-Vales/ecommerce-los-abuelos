@@ -51,7 +51,7 @@ export default function PointsProgress({ userPoints }: PointsProgressProps) {
 				<div>
 					<p className="text-sm text-gray-600">Tus puntos actuales</p>
 					<p className="text-2xl font-extrabold text-[#0B1D4C]">
-						{userPoints.toLocaleString("es-AR")} pts
+						{userPoints.toLocaleString("es-AR")} patitas
 					</p>
 				</div>
 
@@ -81,7 +81,7 @@ export default function PointsProgress({ userPoints }: PointsProgressProps) {
 				<p className="text-xs text-gray-600">
 					Te faltan{" "}
 					<span className="font-semibold">
-						{pointsToNext.toLocaleString("es-AR")} pts
+						{pointsToNext.toLocaleString("es-AR")} patitas
 					</span>{" "}
 					para llegar a{" "}
 					<span className="font-semibold">
