@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Points from "./points";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartStore } from "@/src/stores/cart-store";
@@ -18,7 +18,7 @@ import { searchProducts } from "@/lib/products";
 import type { Product } from "@/src/types/product";
 import { formatCurrency } from "@/lib/currency";
 
-export default function Header() {
+function HeaderContent() {
 	const pathname = usePathname();
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -402,5 +402,13 @@ export default function Header() {
 				</div>
 			</div>
 		</header>
+	);
+}
+
+export default function Header() {
+	return (
+		<Suspense fallback={null}>
+			<HeaderContent />
+		</Suspense>
 	);
 }
