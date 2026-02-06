@@ -1,11 +1,12 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function PagoSuccessPage() {
+function PagoSuccessContent() {
 	const params = useSearchParams();
 
 	const paymentId = params.get("payment_id");
@@ -44,5 +45,20 @@ export default function PagoSuccessPage() {
 				</Link>
 			</div>
 		</div>
+	);
+}
+
+export default function PagoSuccessPage() {
+	return (
+		<Suspense
+			fallback={
+				<div className="min-h-screen flex items-center justify-center bg-gray-50 px-6">
+					<div className="bg-white p-8 rounded-2xl shadow-md max-w-md text-center">
+						Cargando...
+					</div>
+				</div>
+			}>
+			<PagoSuccessContent />
+		</Suspense>
 	);
 }

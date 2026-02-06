@@ -1,9 +1,10 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductsSection from "@/src/components/products/productsSection";
 
-export default function ProductListingsPage() {
+function ProductListingsContent() {
 	const searchParams = useSearchParams();
 	const query = searchParams.get("q") ?? "";
 
@@ -22,5 +23,25 @@ export default function ProductListingsPage() {
 
 			<ProductsSection searchQuery={query} />
 		</div>
+	);
+}
+
+export default function ProductListingsPage() {
+	return (
+		<Suspense
+			fallback={
+				<div className="max-w-[1300px] mx-auto px-6 py-10">
+					<header className="mb-8">
+						<h1 className="text-3xl font-extrabold text-[#0B1D4C]">
+							Buscar productos
+						</h1>
+						<p className="text-sm text-gray-600 mt-1">
+							Cargando resultados...
+						</p>
+					</header>
+				</div>
+			}>
+			<ProductListingsContent />
+		</Suspense>
 	);
 }
